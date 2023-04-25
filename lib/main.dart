@@ -2,11 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_anonfiles/routes/result_widget.dart';
 
 import 'routes/download_widget.dart';
-import 'routes/failed_widget.dart';
 import 'routes/main_menu.dart';
-import 'routes/success_widget.dart';
 import 'routes/upload_widget.dart';
 
 void main() {
@@ -21,8 +20,7 @@ class MobileAnonFiles extends StatelessWidget {
   final Map<String, WidgetBuilder> _routes = <String, WidgetBuilder> {
     '/upload': (BuildContext context) => const UploadWidget(),
     '/download': (BuildContext context) => const DownloadWidget(),
-    '/success': (BuildContext context) => const SuccessWidget(),
-    '/failed': (BuildContext context) => const FailedWidget()
+    '/result': (BuildContext context) => const ResultWidget()
   };
 
   @override
