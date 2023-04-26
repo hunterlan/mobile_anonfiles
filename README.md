@@ -6,3 +6,8 @@ Mobile version of [anonfiles](https://anonfiles.com)
 
 - Android
 - iOS
+
+## Features provided
+
+- Uploading (pure API)
+- Downloading (API + Scrapping)
