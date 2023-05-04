@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mobile_anonfiles/services/anonfiles_service.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -36,13 +35,13 @@ class DownloadState extends State<DownloadWidget> {
         return;
       }
     }
-    _anonFilesService.download(_downloadUrl);
+    await _anonFilesService.download(_downloadUrl);
   }
 
   Widget materialStyle() {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Download'),
+        title: const Text('Download'),
       ),
       body: Form(
           key: _formKey,

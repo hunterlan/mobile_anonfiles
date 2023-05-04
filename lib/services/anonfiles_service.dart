@@ -65,7 +65,7 @@ class AnonFilesService {
     if (downloadLinkElement == null) {
       return false;
     }
-    final downloadUrl = downloadLinkElement.attributes['src'];
+    final downloadUrl = downloadLinkElement.attributes['href'];
     if (downloadUrl == null) {
       return false;
     }
@@ -89,7 +89,8 @@ class AnonFilesService {
           responseType: ResponseType.bytes
         )
       );
-      File file = File(dir);
+      String filename = response.headers.value("content-disposition")!.split('=').last.replaceAll("\"", "");
+      File file = File(dir + filename);
       var raf = file.openSync(mode: FileMode.write);
       raf.writeFromSync(response.data);
       await raf.close();
